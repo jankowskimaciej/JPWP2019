@@ -1,8 +1,9 @@
 # Systemy kontroli wersji
 * Dwa rodzaje
     * Centralized Version Control System
-      * SVN 
-      * TFS
+      * Przykładowe: CVS (Concurrent Versions System), SVN (Subversion), TFS (teraz serwer Azure DevOps Server 2019)
+      * WADY
+         * 
     * Distributed Version Control System
       * Git
       * Mercurial (HG)
@@ -15,8 +16,7 @@
   * tutaj opowiada o Git na Google Tech Talk w maju 2007 roku: https://www.youtube.com/watch?v=4XpnKHJAok8
     * tutaj jest transkrypcja: https://git.wiki.kernel.org/index.php/LinusTalk200705Transcript
     * *"I decided I can write something better than anything out there in two weeks. And I was right."*
-    * *"Designers of Subversion were complete morons (...) There are a few of them in the room today, I suspect. You are stupid."*
-    * *"I have strong opinions, and CVS users, if you actually like using CVS, you shouldn't be here. You should be in some mental institution, somewhere else."*
+    * **Zadanie 00**: wyszukaj w transkrypcji słów: "moron", "mental", "stupid". Zapoznaj się z kontekstem (przeczytaj otaczające akapity). **Porada**: jeśli nie jesteś Linusem Torvaldsem bądź ostrożna/ostrożny w wygłaszaniu radykalnych poglądów.
     
  ## Repozytorium
  * potocznie: repo
