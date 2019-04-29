@@ -22,3 +22,16 @@
  * potocznie: repo
  * Katalog zawierający wszystkie informacje o aktualnym stanie projektu i jego historii.
   * może zawierać odwołania do innych repozytoriów
+
+## Zadanie 01 - przygotowanie środowiska
+1. pobierz Gita ze strony projektu: www.git-scm.com (SCM od Source Control Management)
+1. W trakcie instalacji dobrze jest zwrócić uwagę czy:
+   * Windows Explorer Integration --> **Git Bash** here
+   * Default Text Editor: **VIM**
+   * Use Git from the **Windows Command Prompt**
+   * Terminal Emulator: **MinTTY**
+1. Sprawdź czy instalacja przebiegła pomyślnie:
+   1. Uruchom konsolę WIN+R --> cmd --> Enter
+   1. Wpisz komendę 'git version' - w ten sposób możesz sprawdzić numer wersji Git, która została zainstalowana na Twoim komputerze.
+   
+   
