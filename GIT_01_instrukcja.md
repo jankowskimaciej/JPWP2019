@@ -209,12 +209,21 @@ Zatem zamiast "L" ustaw tag "LL" a kolejnemu commitowi nadaj tag "O".
 #### Zadanie 14 - prównaj gałęzie 
 * jak oznaczona jest master a jak oznaczone są tagi? Użyj Gitk.
 #### Zadanie 15 - użyj podstawowych komend dot. gałęzi
-* git branch my_new_branch - tworzy nową gałąź
-* git branch - lista gałęzi (asterisk, czyli * wskazuje na której gałęzi jesteśmy)
-* git branch -d <branch> - kasuje gałąź
+* `git branch my_new_branch` - tworzy nową gałąź
+* `git branch` - wyświetla listę gałęzi (asterisk, czyli * wskazuje na której gałęzi jesteśmy)
+* `git branch -d <branch>` - kasuje gałąź
 Użyj powyższych komend. 
-
-
+#### Zadanie 16 - zmiana gałęzi
+* `git checkout` - umieszcza stan podanego commita w Working Copy
+* `git checkout <branch>` - przejście na daną gałąź
+* `git checkout <tag>` - przejście na dany tag
+* `git checkout <SHA1>` - przejście na dany commit
+* `git checkout <ref>` - przejście na commit podany w dowolny sposób (np. `git checkout master^^^^`)
+* `git checkout -` - przenosi na poprzednią gałąź
+1. Wykonaj polecenie `git branch`. Na której gałęzi jesteś?
+1. Wykonaj polecenie `git checkout my_new_branch`. Na której gałęzi jesteś?
+1. Zweryfikuje poleceniem `git branch`
+*
 
 ###### Źródła:
 * materiały Macieja Aniserowicza dot. Git dostępne w Internecie (w szczególności kurs gita)
