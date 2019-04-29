@@ -118,8 +118,9 @@ Zmodyfikujmy stan Working Copy:
 1. Rozpakuj, skopiuj ZAWARTOŚĆ katalogu "Docs" do swojego repozytorium (`my_project`).
 1. `git add .` - dodaje wszystkie nowe pliki do repozytorium
 1. `git commit` - "Added initial project template".
+1. strona prywatna znajduje się w katalogu bootstrap-3.3.7\docs\examples\jumbotron
 #### Zadanie 08 - generowanie commitów
-1. zmień TITLE w pliku index.html
+1. zmień TITLE w pliku index.html (w katalogu bootstrap-3.3.7\docs\examples\jumbotron)
 1. `git commit` i odpowiednio opisz zmiany w _commit message_
 1. zmień "Hello world!" w pliku index.html
 1. `git commit` i odpowiednio opisz zmiany w _commit message_
@@ -162,13 +163,56 @@ Zmodyfikujmy stan Working Copy:
 * `git tag -d <nazwa>` -kasuje tag (skrót od `--delete`)
 
 #### Zadanie 12 - otaguj hello
-Kolejnym commitom nadaj kolejno tagi "H"; "E"; "LL", "O". Zauważ, że nie możesz nadać takich samych tagów różnym commitom.
+Kolejnym commitom nadaj kolejno tagi "H"; "E"; "L"; "L"; "O". Da się?
+Zatem zamiast "L" ustaw tag "LL" a kolejnemu commitowi nadaj tag "O".
 
 #### Nawigacja po historii
 * Każdy commit posiada ID wyrażony za pomocą hasha SHA1. 
 * Funkcja haszująca wylicza ciąg znaków (0-9, a-f) o stałej długości (40) na podstawie dowolnych danych.
-* Commit ID = zawartość + rodzic (parent) + data + autor + message
+* Commit ID = zawartość + rodzic (parent) + data utworzenia + autor + commit message
+   * poczytaj akapit "A SHORT NOTE ABOUT SHA-1" na tej stronie: https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection
+   * w przyszłości SHA256
+* **Parent** to poprzedni commit.
+   * commit może mieć wielu rodziców, jeśli jest efektem operacji merge
+   * pierwszy commit w historii (**root commit**) nie ma rodzica
+   
+#### Zadanie 13 - zaobserwuj zawartość commita w historii
+1. `git show <commit>` - pokazuje zawartość commita i jego tagów
+1. `git show master^^^` - trzy commity wcześniej (liczba symboli ^ oznacza ile commitów wcześniej chcemy się cofnąć)
+1. `git show L~2` - dwa commity wczesniej (liczba następująca po symbolu ~ określa ile commitów wcześniej chcemy się cofnąć
+   * zatem można zauważyć, że ^^^^^ = ~5
+1. `git log tag1..tag2` - wszystkie commity od tag1 do tag2 (np. od E do O - sprawdź)
 
+
+### Gałęzie (Branches)
+* **Gałąź** to kopia "koncepcyjna" repozytorium umożliwiająca pracę niezależną od pozostałych kopii. 
+   * Git fizycznie nie kopiuje, nie duplikuje plików pomiędzy gałęziami.
+   * gałąź składa się commitów (to lista commitów).
+   * **Master** to domyślna nazwa pierwszej gałęzi repozytorium Gita (w innych systemach kontroli wersji: trunk, Main, default).
+   * **Tip** to najświeższy commit w gałęzi.
+   * Tag - nieruchomy wskaźnik na commit.
+   * Gałąź - ruchomy wskaźnik na commit (zmienia się z każdym commitem).
+   * Cechy gałęzi w Git
+      * najbardziej elastyczny model
+      * nie są zasobożerne - można tworzyć do woli
+      * brak informacji w commicie na której gałęzi został utworzony
+      * commity można przenosić między gałęziami
+      * commit może zawierać się w wielu gałęziach lub w żadnej
+      * gałęzie nie mają statusu "aktywne/zamknięte" - można je tworzyć i usuwać
+   * Do czego służą gałęzie?
+      * swoboda - tworząc na swojej gałęzi nie przeszkadzamy innym developerom
+      * umożliwiają niezależną pracę wielu osób
+      * umożliwiają niezależną pracę nad wieloma funkcjami jednocześnie
+      * umożliwiają niezależną pracę nad wieloma wersjami oprogramowania jednocześnie
+      * umożliwiają tworzenie śladu po pracy nad konkretnymi funkcjami co łatwo potem można przeglądnąć w historii
+      * umożliwiają eksperymenty
+#### Zadanie 14 - prównaj gałęzie 
+* jak oznaczona jest master a jak oznaczone są tagi? Użyj Gitk.
+#### Zadanie 15 - użyj podstawowych komend dot. gałęzi
+* git branch my_new_branch - tworzy nową gałąź
+* git branch - lista gałęzi (asterisk, czyli * wskazuje na której gałęzi jesteśmy)
+* git branch -d <branch> - kasuje gałąź
+Użyj powyższych komend. 
 
 
 
