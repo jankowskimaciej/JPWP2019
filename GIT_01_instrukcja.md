@@ -222,11 +222,53 @@ Użyj powyższych komend.
 * `git checkout -` - przenosi na poprzednią gałąź
 1. Wykonaj polecenie `git branch`. Na której gałęzi jesteś?
 1. Wykonaj polecenie `git checkout my_new_branch`. Na której gałęzi jesteś?
-1. Zweryfikuje poleceniem `git branch`
-*
+1. Zweryfikuj poleceniem `git branch`
+1. `git checkout -b another_new_branch` - tworzy nową gałąź i od razu tam przenosi
+1. Zweryfikuj poleceniem `git branch`
+
+### head (małymi literami) 
+* to wskaźnik na tip, czyli nazwana referencja (nazwa jest jednocześnie nazwą gałęzi)
+#### Zadanie 17
+* otwórz .git/refs/heads
+* co znajduje się w tym katalogu?
+* Sprawdź zawartość plików? Co to są za hashe? Jak je nazwiemy?
+
+### HEAD (wielkie litery)
+* to commit będący źródłem aktualnej zawartości working copy (aktualny commit)
+* aliasem do tego commita jest symbol @
+#### Zadanie 18
+* otwórz plik .git/HEAD
+* co to za commit?
+* czy wyniki poniższych komend się róźnią?
+   * `git show head`
+   * `git show HEAD`
+   * `git show @`
+* Skorzystaj z @ jako odwołania
+   * `git show @@{'5 minutes ago'}` - w jakim commicie "byłem" 5 minut temu?
+   * Sprawdź czy różnią się wyniki działania tych komend: `git show HEAD@{1}` i `git show @@{1}`. Który to commit?
+* Doprecyzowanie: `git checkout -` dot. poprzedniego HEADa a nie poprzedniej gałęzi. 
+#### Zadanie 19 detached HEAD
+* `git checkout @^`
+* `git checkout LL`
+* na której gałęzi jesteśmy? W ogóle jesteśmy w jakiejś gałęzi? Co się stanie jak będziemy commitować?
+* wracamy `git checkout -b new_branch_from_detached_head_state`
+* **detached HEAD state** to stan w którym zawartość Working Copy (HEAD) to commit niebędący tipem (ostatnim commitem w gałęzi).
+
+#### Zadanie 20 Inna rola checkout
+* checkout przenosi do working copy stan pliku z innego commita (bez zmiany gałęzi)
+1. `git checkout @^ -- examples/jumbotron/index.html`
+1. `git status`
+1. `git commit -m "added login box again"`
+1. `gitk`
+#### Zadanie 21 zmiana nazwy gałęzi
+1. `git branch`
+1. `git branch -m with_login_box`
+#### Zadanie 22
+Przywróć "login box" na nowej gałęzi.
+
 
 ###### Źródła:
-* materiały Macieja Aniserowicza dot. Git dostępne w Internecie (w szczególności kurs gita)
+* materiały Macieja Anierowicza dot. Git dostępne w Internecie (w szczególności kurs gita)
 * manual Git
 * https://git-scm.com/book/en/v2
 
