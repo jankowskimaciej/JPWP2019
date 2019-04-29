@@ -113,7 +113,6 @@ Zmodyfikujmy stan Working Copy:
 1. `touch new_file.txt` - utwórz nowy plik
 1. notepad readme.md / edit readme.md
 1. `git status` - sprawdź status tzw. Working Copy. Możesz zobaczyć, które pliki zostały dodane, które usunięte, a które zmodyfikowane itd.
-
 #### Zadanie 07 - dodajemy gotowy kod do repo
 1. pobierz Bootstrap 3.3.7 - https://github.com/twbs/bootstrap/archive/v3.3.7.zip
 1. Rozpakuj, skopiuj ZAWARTOŚĆ katalogu "Docs" do swojego repozytorium (`my_project`).
@@ -121,9 +120,13 @@ Zmodyfikujmy stan Working Copy:
 1. `git commit` - "Added initial project template".
 #### Zadanie 08 - generowanie commitów
 1. zmień TITLE w pliku index.html
+1. `git commit` i odpowiednio opisz zmiany w _commit message_
 1. zmień "Hello world!" w pliku index.html
+1. `git commit` i odpowiednio opisz zmiany w _commit message_
 1. ukryj box logowania ("Sign in" itd.)
+1. `git commit` i odpowiednio opisz zmiany w _commit message_
 1. zaktualizuj rok (w stopce jest 2016)
+1. `git commit` i odpowiednio opisz zmiany w _commit message_
 #### Zadanie 09 - sprawdzanie zmian w plikach
 1. `git diff` - pokazuje zmiany
 1. pobierz i zainstaluj narzędzie wizualne do obserwacji zmian (np. WinMerge)
@@ -134,13 +137,39 @@ Zmodyfikujmy stan Working Copy:
 1. `git log`
 1. `git log -n4` - pokazuje ostatnie 4 commity
 1. `git log --oneline' - pokazuje commity w wersji skróconej
-1. 'git log --since='{15 minutes ago}' - pokazuje commity z ostatnich 15 minut
-1. 'gitk'  - umożliwia obejrzenie historii projektu w wersji graficznej
-1. zapoznaj się innymi opcjami dla `git log` opisanymi w oficjalnej dokumentacji: https://git-scm.com/docs/git-log
+1. `git log --since='{15 minutes ago}'` - pokazuje commity z ostatnich 15 minut
+1. `gitk`  - umożliwia obejrzenie historii projektu w wersji graficznej
+1. wypróbuj inne opcje dla komendy `git log` - możesz je znaleźć w dokumentacji dla `git log`: https://git-scm.com/docs/git-log
+
+#### Tagi:
+* wskazują na konkretny commit
+* stanowią jego etykietę (nazwę)
+* zawierają dodatkowe informacje w zależności od rodzaju taga:
+   * tagi typu lightweight
+      * to tylko dodatkowe słowo wyświetlane obok ID commita
+      * używane są do prywatnego oznaczenia konkretnego commita (np. przed wykonaniem jakichś skomplikowanych i wysoce ryzykownych zmian w kodzie)
+   * tagi typu annotated 
+      * dodatkowe słowo wyświetlane obok ID commita
+      * autor taga
+      * "tag message"
+      * data utworzenia*
+
 #### Zadanie 11 - otaguj ostatni commit
-1. `git tag finnished_init` - otaguj ostatni commit
-1. `git log --oneline` - sprawdź w konsoli jak commit został otagowany
-1. `gitk` - sprawdź w wersji graficznej jak commit został otagowany
+* `git tag` - wypisuje wszystkie tagi
+* `git tag <nazwa>` - nadaje tag aktualnemu commitowi
+* `git tag <nazwa> <commit>` - nadaje tag wskazanemu commitowi
+* `git tag <nazwa> <commit>` -a -m "msg" - tworzy _annotated_ tag
+* `git tag -d <nazwa>` -kasuje tag (skrót od `--delete`)
+
+#### Zadanie 12 - otaguj hello
+Kolejnym commitom nadaj kolejno tagi "H"; "E"; "LL", "O". Zauważ, że nie możesz nadać takich samych tagów różnym commitom.
+
+#### Nawigacja po historii
+* Każdy commit posiada ID wyrażony za pomocą hasha SHA1. 
+* Funkcja haszująca wylicza ciąg znaków (0-9, a-f) o stałej długości (40) na podstawie dowolnych danych.
+* Commit ID = zawartość + rodzic (parent) + data + autor + message
+
+
 
 
 ###### Źródła:
